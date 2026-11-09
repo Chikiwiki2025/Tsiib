@@ -3,7 +3,7 @@
 #  Única línea que hay que cambiar: "repo" (tu usuario/repositorio de GitHub)
 # ─────────────────────────────────────────────────────────────
 backend:
-  name: github
+  name: git-gateway
   repo: Chikiwiki2025/Tsiib        # ← cámbialo, p. ej. tsiib-editorial/tsiib
   branch: main
   commit_messages:
