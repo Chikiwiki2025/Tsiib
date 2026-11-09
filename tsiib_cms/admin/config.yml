@@ -4,7 +4,7 @@
 # ─────────────────────────────────────────────────────────────
 backend:
   name: github
-  repo: TU-USUARIO/tsiib        # ← cámbialo, p. ej. tsiib-editorial/tsiib
+  repo: editorial/tsiib        # ← cámbialo, p. ej. tsiib-editorial/tsiib
   branch: main
   commit_messages:
     create: 'Nuevo texto: {{slug}}'
