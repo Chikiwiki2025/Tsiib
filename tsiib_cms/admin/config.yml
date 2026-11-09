@@ -4,7 +4,7 @@
 # ─────────────────────────────────────────────────────────────
 backend:
   name: github
-  repo: editorial/tsiib        # ← cámbialo, p. ej. tsiib-editorial/tsiib
+  repo: Chikiwiki2025/Tsiib        # ← cámbialo, p. ej. tsiib-editorial/tsiib
   branch: main
   commit_messages:
     create: 'Nuevo texto: {{slug}}'
@@ -21,7 +21,7 @@ logo_url: /images/logo-tsiib.png
 site_url: /
 display_url: /
 
-media_folder: images/uploads
+media_folder: tsiib_cms/images/uploads
 public_folder: /images/uploads
 
 collections:
@@ -31,7 +31,7 @@ collections:
     description: >
       Cada texto que crees aquí aparece en el sitio en un par de minutos.
       Llena los datos básicos, pega el texto y presiona «Publicar».
-    folder: content/articulos
+    folder: tsiib_cms/content/articulos
     create: true
     delete: true
     extension: md
