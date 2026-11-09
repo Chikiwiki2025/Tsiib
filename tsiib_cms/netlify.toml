@@ -1,0 +1,10 @@
+# Netlify: en cada cambio del repositorio genera articulos.json y publica el sitio
+[build]
+  command = "node build.js"
+  publish = "."
+
+# Que la lista de textos nunca se quede en caché vieja
+[[headers]]
+  for = "/articulos.json"
+  [headers.values]
+    Cache-Control = "no-cache"

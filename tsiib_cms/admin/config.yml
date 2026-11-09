@@ -1,0 +1,107 @@
+# ─────────────────────────────────────────────────────────────
+#  Ts'íib · Panel editorial
+#  Única línea que hay que cambiar: "repo" (tu usuario/repositorio de GitHub)
+# ─────────────────────────────────────────────────────────────
+backend:
+  name: github
+  repo: TU-USUARIO/tsiib        # ← cámbialo, p. ej. tsiib-editorial/tsiib
+  branch: main
+  commit_messages:
+    create: 'Nuevo texto: {{slug}}'
+    update: 'Edición: {{slug}}'
+    delete: 'Eliminado: {{slug}}'
+    uploadMedia: 'Imagen: {{path}}'
+    deleteMedia: 'Imagen eliminada: {{path}}'
+
+# Para probar en la computadora sin internet (npx decap-server). En línea no se usa.
+local_backend: true
+
+locale: es
+logo_url: /images/logo-tsiib.png
+site_url: /
+display_url: /
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: articulos
+    label: Textos
+    label_singular: Texto
+    description: >
+      Cada texto que crees aquí aparece en el sitio en un par de minutos.
+      Llena los datos básicos, pega el texto y presiona «Publicar».
+    folder: content/articulos
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{title}} — {{author}} · {{category}}'
+    sortable_fields: ['date', 'title', 'author', 'category']
+    view_filters:
+      - { label: Artículos,        field: category, pattern: 'Artículos' }
+      - { label: Narrativa,        field: category, pattern: 'Narrativa' }
+      - { label: Ensayo Literario, field: category, pattern: 'Ensayo Literario' }
+      - { label: Poesía,           field: category, pattern: 'Poesía' }
+      - { label: Entrevista,       field: category, pattern: 'Entrevista' }
+      - { label: Sin publicar,     field: published, pattern: false }
+    fields:
+      - label: Título
+        name: title
+        widget: string
+        hint: Tal como debe aparecer en el sitio.
+
+      - label: Autor o autora
+        name: author
+        widget: string
+        hint: Nombre de la estudiante o maestra. Escríbelo siempre igual para que el filtro por autor la agrupe.
+
+      - label: Sección
+        name: category
+        widget: select
+        options: ['Artículos', 'Narrativa', 'Ensayo Literario', 'Poesía', 'Entrevista']
+        default: 'Artículos'
+
+      - label: Fecha de publicación
+        name: date
+        widget: datetime
+        format: 'YYYY-MM-DD'
+        date_format: 'DD/MM/YYYY'
+        time_format: false
+        default: '{{now}}'
+        picker_utc: true
+        hint: Los textos se ordenan por esta fecha (el más reciente arriba).
+
+      - label: Imagen
+        name: image
+        widget: image
+        required: false
+        choose_url: false
+        hint: Aparece a un lado del texto. Si no subes ninguna, el texto se muestra solo.
+
+      - label: Pie de imagen
+        name: caption
+        widget: string
+        required: false
+        hint: Crédito o descripción breve de la imagen.
+
+      - label: Temas
+        name: tags
+        widget: list
+        required: false
+        hint: Palabras clave separadas por comas, p. ej. Simone Weil, ética, lenguaje.
+
+      - label: Texto
+        name: body
+        widget: markdown
+        modes: ['rich_text']
+        buttons: ['bold', 'italic', 'link', 'heading-two', 'heading-three', 'quote', 'bulleted-list', 'numbered-list']
+        editor_components: ['image']
+        hint: Puedes pegarlo directo desde Word o Google Docs. Usa «cita» para destacar una frase.
+
+      - label: Publicar en el sitio
+        name: published
+        widget: boolean
+        default: true
+        hint: Apágalo para guardar el texto sin que aparezca todavía.

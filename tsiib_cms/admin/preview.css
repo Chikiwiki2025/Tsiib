@@ -1,0 +1,32 @@
+/* Vista previa del panel: mismo sistema visual que el lector del sitio */
+:root { --red:#BE1623; --ink:#0A0908; --bg:#FAFAF6; --gray:#8A857C; --light:#C4BFB6; --dborder:#E4E0D8; }
+html, body { background:var(--bg); margin:0; }
+body { font-family:'DM Sans', sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; }
+
+.pv { max-width:800px; }
+.pv-draft { background:var(--ink); color:#fff; font-size:9px; letter-spacing:3px; text-transform:uppercase; padding:10px 40px; }
+.pv-head { padding:44px 40px 32px; border-bottom:1px solid var(--dborder); }
+.pv-cat { display:flex; align-items:center; gap:12px; margin-bottom:16px; font-size:8px; letter-spacing:3px; text-transform:uppercase; color:var(--red); font-weight:500; }
+.pv-line { width:16px; height:1px; background:var(--red); display:inline-block; }
+.pv-head h1 { font-family:'Bitter', serif; font-weight:400; font-size:30px; line-height:1.15; letter-spacing:-.5px; margin:0 0 16px; }
+.pv-meta { display:flex; gap:14px; font-size:10px; color:var(--light); letter-spacing:.5px; align-items:center; }
+.pv-author { font-size:12px; color:var(--gray); }
+.pv-text { padding:40px 40px 24px; overflow:hidden; }
+.pv-fig { float:right; width:240px; margin:0 0 24px 32px; }
+.pv-fig img { width:100%; height:320px; object-fit:cover; display:block; }
+.pv-fig figcaption { padding-top:10px; margin-top:8px; border-top:1px solid var(--dborder); font-size:9px; color:var(--light); letter-spacing:1px; }
+.pv-tags { padding:20px 40px 40px; border-top:1px solid var(--dborder); display:flex; flex-wrap:wrap; gap:7px; align-items:center; }
+.pv-tag-label { width:100%; font-size:7px; letter-spacing:3px; text-transform:uppercase; color:var(--light); margin-bottom:4px; }
+.pv-tag { background:#fff; border:1px solid var(--dborder); padding:5px 12px; font-size:10px; color:var(--gray); }
+
+/* = .art-md del sitio */
+.art-md { max-width:620px; }
+.art-md > p:first-of-type::first-letter, .art-md > div > p:first-of-type::first-letter { font-family:'Bitter',serif; font-weight:700; font-size:4.5em; line-height:.82; float:left; margin:6px 10px 0 0; color:var(--red); letter-spacing:-2px; }
+.art-md p, .art-md li { font-family:'Bitter',serif; font-size:15px; line-height:1.95; color:#1A1916; margin:0 0 1.55em; font-weight:600; }
+.art-md h2 { font-family:'Bitter',serif; font-weight:500; font-size:16px; letter-spacing:-.2px; margin:2.2em 0 .75em; }
+.art-md h3 { font-weight:500; font-size:9px; letter-spacing:3px; text-transform:uppercase; margin:2.4em 0 1em; color:var(--red); }
+.art-md ul, .art-md ol { padding-left:1.3em; margin-bottom:1.55em; }
+.art-md a { color:var(--red); text-underline-offset:3px; }
+.art-md blockquote { border-left:3px solid var(--red); padding:16px 24px; background:#fff; margin:2.2em 0; }
+.art-md blockquote p { font-size:17px; font-weight:400; line-height:1.45; color:var(--ink); margin:0; font-style:italic; }
+.art-md img { max-width:100%; height:auto; display:block; margin:2em 0; }
